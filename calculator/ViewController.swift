@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     @IBAction func inputNumber(_ sender: UIButton) {
         //validate:the lenght of the string expression is legal
-        guard expression.count<=15 else { return } 
+        guard expression.count <= 15 else { return }
         
         //validate:can not be divided by 0
         if getTheLastChar(expression) == "/" && sender.tag == 0 { return }
@@ -48,11 +48,9 @@ class ViewController: UIViewController {
         }
         
         //perform calculation
-        //print(expression)
         let preSymbol:String  = getTheLastChar(expression)
         if expression != "" && !symbols.contains(preSymbol) {
             let expn = NSExpression(format: expression)
-            //print("\(expn.expressionValue(with: nil, context: nil) ?? 0)")
             output.text = "\(expn.expressionValue(with: nil, context: nil) ?? 0)"
             expression = ""
             input.text = (input.text ?? "") + "="
@@ -79,7 +77,6 @@ class ViewController: UIViewController {
     }
     
     private func isPurnInt(string: String) -> Bool {
-        
         let scan: Scanner = Scanner(string: string)
         var val:Int = 0
         return scan.scanInt(&val) && scan.isAtEnd
