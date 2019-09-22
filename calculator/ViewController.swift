@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var expression:String = ""
+    var expression:String = "" 
     var result:String = ""
     
     let symbols = ["+","-","*","/"]
@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     @IBAction func inputNumber(_ sender: UIButton) {
         //validate:the lenght of the string expression is legal
-        guard expression.count<=15 else { return }
+        guard expression.count<=15 else { return } 
         
         //validate:can not be divided by 0
         if getTheLastChar(expression) == "/" && sender.tag == 0 { return }
