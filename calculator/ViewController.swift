@@ -55,7 +55,6 @@ class ViewController: UIViewController {
             expression = ""
             input.text = (input.text ?? "") + "="
         }
-        
     }
     
     @IBAction func reset(_ sender: UIButton) {
