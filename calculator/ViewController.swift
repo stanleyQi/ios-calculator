@@ -23,7 +23,9 @@ class ViewController: UIViewController {
         guard expression.count <= 15 else { return }
         
         //validate:can not be divided by 0
-        if getTheLastChar(expression) == "/" && sender.tag == 0 { return }
+        var zeroDivFlg:Bool = false
+        if getTheLastChar(expression) == "/" && sender.tag == 0 { zeroDivFlg=true }
+        guard zeroDivFlg==false else { return }
         
         //concat the input string to expression
         expression += String(sender.tag)
